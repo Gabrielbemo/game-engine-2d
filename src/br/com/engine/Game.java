@@ -13,6 +13,7 @@ public class Game extends Canvas implements Runnable {
     private final int WIDTH = 240;
     private final int HEIGHT = 160;
     private final int SCALE = 3;
+    private int x;
 
     private BufferedImage image;
 
@@ -66,6 +67,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void tick() {
+        x++;
         frames++;
         if(frames > maxFrames){
             frames = 0;
@@ -88,7 +90,7 @@ public class Game extends Canvas implements Runnable {
 
         g.setFont(new Font("Arial", Font.BOLD, 20));
         g.setColor(Color.black);
-        g.drawString("Ola mundo", 20, 20);
+        g.drawString("kkkk q q ta acontecendo", 20, 20);
 
         g.setColor(Color.GREEN);
         g.fillRect(20, 20, 20, 20);
@@ -97,7 +99,7 @@ public class Game extends Canvas implements Runnable {
         /*renderizando o game*/
         Graphics2D g2 = (Graphics2D) g;
         //g2.rotate(Math.toRadians(55),40+8,40+8);
-        g2.drawImage(player[curAnimation], 40, 40, null);
+        g2.drawImage(player[curAnimation], x, 40, null);
         //g2.rotate(Math.toRadians(-55),40+8,40+8);
         g2.setColor(new Color(0,0,0,100));
         g2.fillRect(0,0,WIDTH,HEIGHT);
